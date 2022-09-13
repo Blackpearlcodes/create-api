@@ -1,27 +1,32 @@
 <!-------- Check if Palindrome -------->
 <?php
-
+if isset($_GET['submit']){
 $str = $_GET["str"]
-if (strrev($str) == ($str)) {
-    $x = "Palindrome";
+
+function Palindrome($string){ 
+    if (strrev($string) == $string){ 
+        $x = "Palindrome"; 
     }
-else{
-    $x = "Not a Palindrome";
+    else{
+        $x = "Not Palindrome";
     }
+}
 echo jason_encode($x);
+}
 ?>
 
 
 <!----- Arithmatic Operation API ------->
 <!---------- a^3 + b*c - a/b ----------->
 <?php
-
+if isset($_POST['submit']){
 $a = $_POST["a"]
 $b = $_POST["b"]
 $c = $_POST["c"]
 
 $x = ($a ** 3) + ($b * $c) + ($a / $b);
 echo jason_encode($x);
+}
 ?>
 
 
@@ -48,7 +53,7 @@ if isset($_POST['submit']){
 
 <!----------- Days till Christmas ------------>
 <?php
-$timeXmas = $_POST["timeXmas"]
+$timeXmas = $_GET["timeXmas"]
 date_default_timezone_set('Asia/Beirut');
 
 $christmasDay = strtotime('December 25');
