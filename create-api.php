@@ -53,6 +53,7 @@ if isset($_POST['submit']){
 
 <!----------- Days till Christmas ------------>
 <?php
+if isset($_GET['submit']){
 $timeXmas = $_GET["timeXmas"]
 date_default_timezone_set('Asia/Beirut');
 
@@ -61,4 +62,5 @@ $time = time();
 $days = ceil(($christmasDay - $time)/60/60/24);
 
 echo jason_encode($days);
+}
 ?>
